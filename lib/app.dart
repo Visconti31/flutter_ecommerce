@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/features/authentication/screens/onboarding_screen.dart';
 import 'package:flutter_ecommerce/utils/theme/theme.dart';
+import 'package:get/get.dart';
 
 // * This class is used to setup Themes, initial Bindings, any animation, and ...
 class App extends StatelessWidget {
@@ -7,10 +9,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
+      home: const OnBoardingScreen(),
     );
   }
 }
