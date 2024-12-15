@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:flutter_ecommerce/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:flutter_ecommerce/features/authentication/screens/onboarding/widgets/onboarding_skip_button.dart';
+import 'package:flutter_ecommerce/utils/constants/colors.dart';
 import 'package:flutter_ecommerce/utils/constants/image_strings.dart';
+import 'package:flutter_ecommerce/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce/utils/constants/text_strings.dart';
+import 'package:flutter_ecommerce/utils/device/device_utility.dart';
+import 'package:flutter_ecommerce/utils/helpers/helper_functions.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -34,9 +40,10 @@ class OnBoardingScreen extends StatelessWidget {
         ),
 
         // Skip button
-        const OnBoardingSkipButton()
+        const OnBoardingSkipButton(),
 
         // Dot navigation SmoothPageIndicator
+        const OnBoardingDotNavigation(),
 
         // Circular Button
       ],
