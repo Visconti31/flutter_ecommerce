@@ -16,40 +16,41 @@ class OnBoardingScreen extends StatelessWidget {
     final controller = Get.put(OnboardingController());
 
     return Scaffold(
-        body: Stack(
-      children: [
-        // Horizontal scrollable pages
-        PageView(
-          controller: controller.pageController,
-          onPageChanged: controller.updatePageIndicator,
-          children: const [
-            OnBoardingPage(
-              image: TImages.onBoardingImage1,
-              title: TTexts.onBoardingTitle1,
-              subtitle: TTexts.onBoardingSubTitle1,
-            ),
-            OnBoardingPage(
-              image: TImages.onBoardingImage2,
-              title: TTexts.onBoardingTitle2,
-              subtitle: TTexts.onBoardingSubTitle2,
-            ),
-            OnBoardingPage(
-              image: TImages.onBoardingImage3,
-              title: TTexts.onBoardingTitle3,
-              subtitle: TTexts.onBoardingSubTitle3,
-            ),
-          ],
-        ),
+      body: Stack(
+        children: [
+          // Horizontal scrollable pages
+          PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
+            children: const [
+              OnBoardingPage(
+                image: TImages.onBoardingImage1,
+                title: TTexts.onBoardingTitle1,
+                subtitle: TTexts.onBoardingSubTitle1,
+              ),
+              OnBoardingPage(
+                image: TImages.onBoardingImage2,
+                title: TTexts.onBoardingTitle2,
+                subtitle: TTexts.onBoardingSubTitle2,
+              ),
+              OnBoardingPage(
+                image: TImages.onBoardingImage3,
+                title: TTexts.onBoardingTitle3,
+                subtitle: TTexts.onBoardingSubTitle3,
+              ),
+            ],
+          ),
 
-        // Skip button
-        const OnBoardingSkipButton(),
+          // Skip button
+          const OnBoardingSkipButton(),
 
-        // Dot navigation SmoothPageIndicator
-        const OnBoardingDotNavigation(),
+          // Dot navigation SmoothPageIndicator
+          const OnBoardingDotNavigation(),
 
-        // Circular Button
-        const OnBoardingNextButton()
-      ],
-    ));
+          // Circular Button
+          const OnBoardingNextButton()
+        ],
+      ),
+    );
   }
 }
