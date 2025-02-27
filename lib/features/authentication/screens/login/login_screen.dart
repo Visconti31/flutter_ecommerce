@@ -6,7 +6,6 @@ import 'package:flutter_ecommerce/features/authentication/screens/login/widget/l
 import 'package:flutter_ecommerce/common/widgets/login_signup/social_buttons.dart';
 import 'package:flutter_ecommerce/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce/utils/constants/text_strings.dart';
-import 'package:flutter_ecommerce/utils/helpers/helper_functions.dart';
 import 'package:get/utils.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -14,8 +13,6 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
