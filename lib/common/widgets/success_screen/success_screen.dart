@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/common/styles/spacing_styles.dart';
-import 'package:flutter_ecommerce/features/authentication/screens/login/login_screen.dart';
-import 'package:flutter_ecommerce/utils/constants/image_strings.dart';
 import 'package:flutter_ecommerce/utils/constants/sizes.dart';
 import 'package:flutter_ecommerce/utils/constants/text_strings.dart';
 import 'package:flutter_ecommerce/utils/helpers/helper_functions.dart';
-import 'package:get/get.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key});
+  const SuccessScreen({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.subTitle,
+    required this.onPressed,
+  });
+
+  final image, title, subTitle;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +25,21 @@ class SuccessScreen extends StatelessWidget {
           children: [
             //* Image
             Image(
-              image: const AssetImage(TImages.staticSuccessIllustration),
+              image: AssetImage(image),
               width: THelperFunctions.screenWidth() * 0.6,
             ),
             const SizedBox(height: TSizes.spaceBtwSections),
 
             //* Title and Subtitle
             Text(
-              TTexts.yourAccountCreatedTitle,
+              title,
               style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: TSizes.spaceBtwItems),
 
             Text(
-              TTexts.yourAccountCreatedSubTitle,
+              subTitle,
               style: Theme.of(context).textTheme.labelMedium,
               textAlign: TextAlign.center,
             ),
@@ -43,7 +49,7 @@ class SuccessScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(() => const LoginScreen()),
+                onPressed: onPressed,
                 child: const Text(TTexts.tContinue),
               ),
             ),
